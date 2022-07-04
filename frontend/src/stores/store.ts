@@ -17,7 +17,7 @@ export const store = configureStore({
   devTools: true,
 })
 
-const rootEpic = combineEpics(createEpics([documentSlice, codenamesSlice]))
+const rootEpic = combineEpics(...createEpics([documentSlice, codenamesSlice]))
 epicMiddleware.run(rootEpic)
 
 export type FBoardState = ReturnType<typeof store.getState>

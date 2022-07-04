@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import { AuthEpic } from './epics'
+
 interface DocumentState {}
 
 export const initialState: DocumentState = {}
@@ -14,6 +16,8 @@ const slice = createSlice({
 
 export const { auth } = slice.actions
 
-export const epics = {}
+export const epics = {
+  auth: AuthEpic,
+}
 
 export const reducer = slice.reducer
